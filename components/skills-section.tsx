@@ -96,23 +96,23 @@ export default function SkillsSection() {
         <Feature
           icon={<Icon as={Terminal} w={6} h={6} />}
           title="Backend Development"
-          text="Node.js, Express, NestJS, Python, Django, RESTful API Design"
+          text="Node.js, Express, Python, RESTful API Design"
         />
         <Feature
           icon={<Icon as={Database} w={6} h={6} />}
           title="Database Solutions"
-          text="SQL (PostgreSQL, MySQL), NoSQL (MongoDB), Data Modeling, Query Optimization"
+          text="SQL (MySQL), NoSQL (MongoDB), Query Optimization"
         />
         <Feature
           icon={<Icon as={Code} w={6} h={6} />}
           title="Software Engineering"
           text="Clean Code, Design Patterns, Microservices, CI/CD, Test-Driven Development"
         />
-        <Feature
+        {/* <Feature
           icon={<Icon as={Globe} w={6} h={6} />}
           title="Cloud Services"
           text="AWS, Azure, Google Cloud, Serverless Architecture, Infrastructure as Code"
-        />
+        /> */}
         <Feature
           icon={<Icon as={Smartphone} w={6} h={6} />}
           title="Enterprise Solutions"

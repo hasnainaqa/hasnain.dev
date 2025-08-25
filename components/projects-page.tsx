@@ -5,8 +5,10 @@ import ProjectsSection from "./projects-section"
 import SectionHeading from "./section-heading"
 
 export default function ProjectsPage() {
+  
   return (
     <PageLayout withBgIcons={true}>
+      <title>Hasnain Projects</title>
       <SectionHeading
         title="Featured Projects"
         accent="Projects"
