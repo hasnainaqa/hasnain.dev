@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "vercel-build": "npm install --legacy-peer-deps && next build"
   },
   "dependencies": {
     "@chakra-ui/next-js": "^2.2.0",
@@ -73,4 +74,5 @@
     "eslint-config-next": "14.0.4",
     "typescript": "^5.3.3"
   }
+  
 }
