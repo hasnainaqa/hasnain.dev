@@ -1,4 +1,4 @@
-import ResumePage from "@/components/resume-page";
+import ResumePage from "@/components/ResumePage";
 
 export default function Resume() {
   return (
