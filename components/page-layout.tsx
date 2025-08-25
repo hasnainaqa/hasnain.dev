@@ -9,10 +9,11 @@ interface PageLayoutProps {
   children: ReactNode
   withBgIcons?: boolean
   maxWidth?: string
-  py?: number | { base: number; md: number; lg: number }
-  px?: number | { base: number; md: number; lg: number }
+  py?: number | { base: number; md?: number; lg?: number }
+  px?: number | { base: number; md?: number; lg?: number }
   bgColor?: string
 }
+
 
 export default function PageLayout({
   children,
