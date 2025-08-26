@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import PageLayout from "./page-layout"
-import ContactSection from "./contact-section"
-import SectionHeading from "./section-heading"
+import PageLayout from './page-layout'
+import ContactSection from './contact-section'
+import SectionHeading from './section-heading'
 
 export default function ContactPage() {
   return (
@@ -18,4 +18,3 @@ export default function ContactPage() {
     </PageLayout>
   )
 }
-

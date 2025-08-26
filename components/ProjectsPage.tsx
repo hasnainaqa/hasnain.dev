@@ -1,11 +1,10 @@
-"use client"
+'use client'
 
-import PageLayout from "./page-layout"
-import ProjectsSection from "./projects-section"
-import SectionHeading from "./section-heading"
+import PageLayout from './page-layout'
+import ProjectsSection from './projects-section'
+import SectionHeading from './section-heading'
 
 export default function ProjectsPage() {
-  
   return (
     <PageLayout withBgIcons={true}>
       <title>Hasnain Projects</title>
@@ -20,4 +19,3 @@ export default function ProjectsPage() {
     </PageLayout>
   )
 }
-

@@ -1,5 +1,4 @@
-"use client"
-
+'use client'
 import {
   Box,
   Flex,
@@ -16,32 +15,29 @@ import {
   VStack,
   useDisclosure,
   Menu,
-} from "@chakra-ui/react"
-import { HamburgerIcon } from "@chakra-ui/icons"
-import AnimatedLogo from "./animated-logo"
-import ColorModeToggle from "./color-mode-toggle"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useMemo, useRef } from "react"
+} from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons'
+import AnimatedLogo from './animated-logo'
+import ColorModeToggle from './color-mode-toggle'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useMemo, useRef } from 'react'
 
 export default function Header() {
   const pathname = usePathname()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = useRef(null)
-
-  const bgColor = useColorModeValue("white", "gray.800")
-  const borderColor = useColorModeValue("gray.100", "gray.700")
-
+  const bgColor = useColorModeValue('white', 'gray.800')
+  const borderColor = useColorModeValue('gray.100', 'gray.700')
   const navItems = useMemo(
     () => [
-      { href: "/", label: "Home" },
-      { href: "/projects", label: "Projects" },
-      { href: "/resume", label: "Resume" },
-      { href: "/contact", label: "Contact" },
+      { href: '/', label: 'Home' },
+      { href: '/projects', label: 'Projects' },
+      { href: '/resume', label: 'Resume' },
+      { href: '/contact', label: 'Contact' },
     ],
     []
   )
-
   return (
     <Box
       as="header"
@@ -55,18 +51,21 @@ export default function Header() {
       px={{ base: 4, md: 6 }}
       py={3}
     >
-      <Flex alignItems="center" justifyContent="space-between" maxW="7xl" mx="auto">
-        {/* Logo */}
+      <Flex
+        alignItems="center"
+        justifyContent="space-between"
+        maxW="7xl"
+        mx="auto"
+      >
         <Link href="/" passHref>
           <AnimatedLogo />
         </Link>
 
-        {/* Desktop Navigation */}
-        <HStack spacing={6} display={{ base: "none", md: "flex" }}>
+        <HStack spacing={6} display={{ base: 'none', md: 'flex' }}>
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} passHref>
               <Button
-                variant={pathname === item.href ? "solid" : "ghost"}
+                variant={pathname === item.href ? 'solid' : 'ghost'}
                 colorScheme="brand"
                 size="sm"
               >
@@ -75,14 +74,10 @@ export default function Header() {
             </Link>
           ))}
         </HStack>
-
-        {/* Right Side */}
         <HStack spacing={3}>
           <ColorModeToggle />
-
-          {/* Desktop CTA */}
           <Button
-            display={{ base: "none", md: "inline-flex" }}
+            display={{ base: 'none', md: 'inline-flex' }}
             colorScheme="brand"
             size="sm"
             fontWeight="medium"
@@ -93,18 +88,15 @@ export default function Header() {
             Contact Me
           </Button>
 
-          {/* Mobile Hamburger */}
           <IconButton
             ref={btnRef}
-            display={{ base: "inline-flex", md: "none" }}
+            display={{ base: 'inline-flex', md: 'none' }}
             icon={<HamburgerIcon />}
             aria-label="Open Menu"
             onClick={onOpen}
           />
         </HStack>
       </Flex>
-
-      {/* Mobile Drawer */}
       <Drawer
         isOpen={isOpen}
         placement="right"
@@ -115,7 +107,6 @@ export default function Header() {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>Navigation</DrawerHeader>
-
           <DrawerBody>
             <VStack spacing={4} align="stretch">
               {navItems.map((item) => (
@@ -124,7 +115,7 @@ export default function Header() {
                     onClick={onClose}
                     w="100%"
                     justifyContent="flex-start"
-                    variant={pathname === item.href ? "solid" : "ghost"}
+                    variant={pathname === item.href ? 'solid' : 'ghost'}
                     colorScheme="brand"
                   >
                     {item.label}

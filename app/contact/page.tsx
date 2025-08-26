@@ -1,4 +1,4 @@
-import ContactPage from "../../components/ContactPage";
+import ContactPage from '../../components/ContactPage'
 
 export default function Contact() {
   return (
@@ -6,5 +6,5 @@ export default function Contact() {
       <title>Contact me</title>
       <ContactPage />
     </>
-  );
+  )
 }

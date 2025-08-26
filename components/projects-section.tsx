@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import {
   Box,
@@ -15,63 +15,63 @@ import {
   Tag,
   VStack,
   LinkBox,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+} from '@chakra-ui/react'
+import { motion } from 'framer-motion'
+import { ExternalLink, Github } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 
-const MotionBox = motion(Box);
-const MotionFlex = motion(Flex);
+const MotionBox = motion(Box)
+const MotionFlex = motion(Flex)
 
 interface ProjectProps {
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-  category?: string;
+  title: string
+  description: string
+  image: string
+  technologies: string[]
+  liveUrl?: string
+  githubUrl?: string
+  category?: string
 }
 
 const projects: ProjectProps[] = [
   {
-    title: "SEO Analytics",
+    title: 'SEO Analytics',
     description:
-      "A comprehensive web-based platform designed to analyze and optimize website SEO performance. This tool provides in-depth insights into various SEO metrics, helping businesses improve their online visibility and search engine rankings.",
-    image: "/SEO.png",
+      'A comprehensive web-based platform designed to analyze and optimize website SEO performance. This tool provides in-depth insights into various SEO metrics, helping businesses improve their online visibility and search engine rankings.',
+    image: '/SEO.png',
     technologies: [
-      "Next.js",
-      "Node.js",
-      "MongoDB",
-      "Chart.js",
-      "Google Search...",
-      "LemonSqueezy...",
-      "Open AI API",
+      'Next.js',
+      'Node.js',
+      'MongoDB',
+      'Chart.js',
+      'Google Search...',
+      'LemonSqueezy...',
+      'Open AI API',
     ],
-    category: "Full Stack",
+    category: 'Full Stack',
   },
   {
-    title: "ALM Quran Academy",
+    title: 'ALM Quran Academy',
     description:
-      "An online platform for Quranic education, offering accessible and comprehensive courses for students worldwide. The academy provides a unique blend of traditional Islamic education with modern e-learning methodologies.",
-    image: "/ALM.png",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
-    liveUrl: "https://alm-ten.vercel.app/",
-    githubUrl: "https://github.com/hasnainaqa/ALM-Academy",
-    category: "Frontend",
+      'An online platform for Quranic education, offering accessible and comprehensive courses for students worldwide. The academy provides a unique blend of traditional Islamic education with modern e-learning methodologies.',
+    image: '/ALM.png',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    liveUrl: 'https://alm-ten.vercel.app/',
+    githubUrl: 'https://github.com/hasnainaqa/ALM-Academy',
+    category: 'Frontend',
   },
   {
-    title: "EuPak Education",
+    title: 'EuPak Education',
     description:
-      "A comprehensive platform connecting Pakistani students with educational opportunities in Europe. This project aims to simplify the process of finding, applying to, and preparing for higher education programs in European institutions.",
-    image: "/EUPAK.png",
-    technologies: ["Next.js", "Tailwind CSS", "MongoDB", "Send grid API"],
-    liveUrl: "https://www.eupakeducation.com/",
-    githubUrl: "https://github.com/hasnainaqa/eupak",
-    category: "Full Stack",
+      'A comprehensive platform connecting Pakistani students with educational opportunities in Europe. This project aims to simplify the process of finding, applying to, and preparing for higher education programs in European institutions.',
+    image: '/EUPAK.png',
+    technologies: ['Next.js', 'Tailwind CSS', 'MongoDB', 'Send grid API'],
+    liveUrl: 'https://www.eupakeducation.com/',
+    githubUrl: 'https://github.com/hasnainaqa/eupak',
+    category: 'Full Stack',
   },
-];
+]
 
 function Project({
   title,
@@ -82,20 +82,21 @@ function Project({
   githubUrl,
   category,
 }: ProjectProps) {
-  const bgColor = useColorModeValue("white", "gray.800");
-  const borderColor = useColorModeValue("gray.100", "gray.700");
-  const hoverBorderColor = useColorModeValue("brand.200", "brand.500");
-  const titleColor = useColorModeValue("gray.800", "white");
-  const textColor = useColorModeValue("gray.600", "gray.300");
-  const tagBg = useColorModeValue("brand.50", "gray.700");
-  const tagColor = useColorModeValue("brand.600", "brand.300");
+  const bgColor = useColorModeValue('white', 'gray.800')
+  const borderColor = useColorModeValue('gray.100', 'gray.700')
+  const hoverBorderColor = useColorModeValue('brand.200', 'brand.500')
+  const titleColor = useColorModeValue('gray.800', 'white')
+  const textColor = useColorModeValue('gray.600', 'gray.300')
+  const tagBg = useColorModeValue('brand.50', 'gray.700')
+  const tagColor = useColorModeValue('brand.600', 'brand.300')
 
   return (
     <MotionBox
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}>
+      transition={{ duration: 0.5 }}
+    >
       <LinkBox
         borderWidth="1px"
         borderRadius="md"
@@ -104,19 +105,20 @@ function Project({
         borderColor={borderColor}
         transition="all 0.2s"
         _hover={{
-          transform: "translateY(-4px)",
-          shadow: "md",
+          transform: 'translateY(-4px)',
+          shadow: 'md',
           borderColor: hoverBorderColor,
         }}
         height="100%"
         display="flex"
-        flexDirection="column">
+        flexDirection="column"
+      >
         <Box position="relative" height="240px" width="100%">
           <Image
-            src={image || "/placeholder.svg"}
+            src={image || '/placeholder.svg'}
             alt={title}
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: 'cover' }}
           />
           <Badge
             position="absolute"
@@ -127,7 +129,8 @@ function Project({
             textTransform="uppercase"
             px="2"
             py="1"
-            borderRadius="md">
+            borderRadius="md"
+          >
             {category}
           </Badge>
         </Box>
@@ -138,7 +141,8 @@ function Project({
             fontSize="xl"
             fontWeight="bold"
             lineHeight="tight"
-            color={titleColor}>
+            color={titleColor}
+          >
             {title}
           </Heading>
 
@@ -159,7 +163,8 @@ function Project({
               direction="row"
               spacing="4"
               width="100%"
-              justifyContent="flex-end">
+              justifyContent="flex-end"
+            >
               {githubUrl && (
                 <Button
                   as={Link}
@@ -169,7 +174,8 @@ function Project({
                   size="sm"
                   leftIcon={<Github size={16} />}
                   variant="ghost"
-                  colorScheme="brand">
+                  colorScheme="brand"
+                >
                   Code
                 </Button>
               )}
@@ -181,7 +187,8 @@ function Project({
                   rel="noopener noreferrer"
                   size="sm"
                   leftIcon={<ExternalLink size={16} />}
-                  colorScheme="brand">
+                  colorScheme="brand"
+                >
                   Live Demo
                 </Button>
               )}
@@ -190,14 +197,14 @@ function Project({
         </VStack>
       </LinkBox>
     </MotionBox>
-  );
+  )
 }
 
 export default function ProjectsSection() {
-  const bgColor = useColorModeValue("gray.50", "gray.900");
-  const headingColor = useColorModeValue("gray.800", "white");
-  const accentColor = useColorModeValue("brand.600", "brand.300");
-  const textColor = useColorModeValue("gray.600", "gray.300");
+  const bgColor = useColorModeValue('gray.50', 'gray.900')
+  const headingColor = useColorModeValue('gray.800', 'white')
+  const accentColor = useColorModeValue('brand.600', 'brand.300')
+  const textColor = useColorModeValue('gray.600', 'gray.300')
 
   return (
     <Box py="16" px={{ base: 4, md: 8 }} bg={bgColor}>
@@ -208,24 +215,27 @@ export default function ProjectsSection() {
           transition={{ duration: 0.5 }}
           direction="column"
           align="center"
-          mb="12">
+          mb="12"
+        >
           <Heading
             as="h1"
-            fontSize={{ base: "3xl", md: "4xl" }}
+            fontSize={{ base: '3xl', md: '4xl' }}
             fontWeight="bold"
             textAlign="center"
             mb="4"
-            color={headingColor}>
-            Featured{" "}
+            color={headingColor}
+          >
+            Featured{' '}
             <Text as="span" color={accentColor}>
               Projects
             </Text>
           </Heading>
           <Text
-            fontSize={{ base: "md", lg: "lg" }}
+            fontSize={{ base: 'md', lg: 'lg' }}
             color={textColor}
             textAlign="center"
-            maxW="3xl">
+            maxW="3xl"
+          >
             A selection of my most significant professional work, demonstrating
             technical expertise and problem-solving capabilities across various
             domains.
@@ -247,11 +257,12 @@ export default function ProjectsSection() {
             size="md"
             colorScheme="brand"
             variant="outline"
-            leftIcon={<Github size={18} />}>
+            leftIcon={<Github size={18} />}
+          >
             View More on GitHub
           </Button>
         </Flex>
       </Container>
     </Box>
-  );
+  )
 }

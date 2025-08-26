@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useState, type FormEvent } from "react"
+import { useState, type FormEvent } from 'react'
 import {
   Box,
   SimpleGrid,
@@ -24,51 +24,56 @@ import {
   CardHeader,
   Text,
   Heading,
-} from "@chakra-ui/react"
-import { motion } from "framer-motion"
-import { Mail, Phone, MapPin, Send, User, MessageSquare, Github, Linkedin, Twitter } from "lucide-react"
+} from '@chakra-ui/react'
+import { motion } from 'framer-motion'
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  User,
+  MessageSquare,
+  Github,
+  Linkedin,
+  Twitter,
+} from 'lucide-react'
 
 const MotionCard = motion(Card)
 
 export default function ContactSection() {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [subject, setSubject] = useState("")
-  const [message, setMessage] = useState("")
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const toast = useToast()
 
-  // Theme colors
-  const bgColor = useColorModeValue("white", "gray.800")
-  const borderColor = useColorModeValue("gray.100", "gray.700")
-  const iconColor = useColorModeValue("brand.600", "brand.300")
-  const headingColor = useColorModeValue("gray.800", "white")
-  const textColor = useColorModeValue("gray.600", "gray.300")
-  const inputBgColor = useColorModeValue("white", "gray.700")
-  const cardBgColor = useColorModeValue("white", "gray.800")
-  const iconBgColor = useColorModeValue("brand.50", "gray.700")
-  const socialIconBgColor = useColorModeValue("gray.100", "gray.700")
+  const bgColor = useColorModeValue('white', 'gray.800')
+  const borderColor = useColorModeValue('gray.100', 'gray.700')
+  const iconColor = useColorModeValue('brand.600', 'brand.300')
+  const headingColor = useColorModeValue('gray.800', 'white')
+  const textColor = useColorModeValue('gray.600', 'gray.300')
+  const inputBgColor = useColorModeValue('white', 'gray.700')
+  const cardBgColor = useColorModeValue('white', 'gray.800')
+  const iconBgColor = useColorModeValue('brand.50', 'gray.700')
+  const socialIconBgColor = useColorModeValue('gray.100', 'gray.700')
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Create mailto link with form data
     const mailtoLink = `mailto:muhammedhasnain3356@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`
 
-    // Simulate a slight delay for better UX
     setTimeout(() => {
-      // Open email client
       window.location.href = mailtoLink
 
-      // Show success toast
       toast({
-        title: "Message prepared",
-        description: "Your message is ready to be sent from your email client.",
-        status: "success",
+        title: 'Message prepared',
+        description: 'Your message is ready to be sent from your email client.',
+        status: 'success',
         duration: 5000,
         isClosable: true,
-        position: "top",
+        position: 'top',
       })
 
       setIsSubmitting(false)
@@ -77,7 +82,6 @@ export default function ContactSection() {
 
   return (
     <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={10} alignItems="stretch">
-      {/* Contact Information Card */}
       <MotionCard
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -90,8 +94,16 @@ export default function ContactSection() {
         overflow="hidden"
         height="100%"
       >
-        <CardHeader bg={useColorModeValue("brand.50", "gray.700")} py={6} px={8}>
-          <Heading as="h3" size="lg" color={useColorModeValue("brand.700", "white")}>
+        <CardHeader
+          bg={useColorModeValue('brand.50', 'gray.700')}
+          py={6}
+          px={8}
+        >
+          <Heading
+            as="h3"
+            size="lg"
+            color={useColorModeValue('brand.700', 'white')}
+          >
             Contact Information
           </Heading>
         </CardHeader>
@@ -99,11 +111,24 @@ export default function ContactSection() {
         <CardBody p={8}>
           <VStack spacing={8} align="start">
             <HStack spacing={5}>
-              <Flex w={14} h={14} align="center" justify="center" rounded="full" bg={iconBgColor} color={iconColor}>
+              <Flex
+                w={14}
+                h={14}
+                align="center"
+                justify="center"
+                rounded="full"
+                bg={iconBgColor}
+                color={iconColor}
+              >
                 <Icon as={Mail} boxSize={6} />
               </Flex>
               <Box>
-                <Text fontWeight="bold" fontSize="md" color={headingColor} mb={1}>
+                <Text
+                  fontWeight="bold"
+                  fontSize="md"
+                  color={headingColor}
+                  mb={1}
+                >
                   Email
                 </Text>
                 <Link
@@ -111,7 +136,7 @@ export default function ContactSection() {
                   color={iconColor}
                   fontWeight="medium"
                   fontSize="lg"
-                  _hover={{ textDecoration: "none", color: "brand.500" }}
+                  _hover={{ textDecoration: 'none', color: 'brand.500' }}
                 >
                   muhammedhasnain3356@gmail.com
                 </Link>
@@ -119,18 +144,31 @@ export default function ContactSection() {
             </HStack>
 
             <HStack spacing={5}>
-              <Flex w={14} h={14} align="center" justify="center" rounded="full" bg={iconBgColor} color={iconColor}>
+              <Flex
+                w={14}
+                h={14}
+                align="center"
+                justify="center"
+                rounded="full"
+                bg={iconBgColor}
+                color={iconColor}
+              >
                 <Icon as={Phone} boxSize={6} />
               </Flex>
               <Box>
-                <Text fontWeight="bold" fontSize="md" color={headingColor} mb={1}>
+                <Text
+                  fontWeight="bold"
+                  fontSize="md"
+                  color={headingColor}
+                  mb={1}
+                >
                   Phone
                 </Text>
                 <Link
                   href="tel:+923256244441"
                   color={textColor}
                   fontSize="lg"
-                  _hover={{ textDecoration: "none", color: "brand.500" }}
+                  _hover={{ textDecoration: 'none', color: 'brand.500' }}
                 >
                   +92 325 624 4441
                 </Link>
@@ -138,11 +176,24 @@ export default function ContactSection() {
             </HStack>
 
             <HStack spacing={5}>
-              <Flex w={14} h={14} align="center" justify="center" rounded="full" bg={iconBgColor} color={iconColor}>
+              <Flex
+                w={14}
+                h={14}
+                align="center"
+                justify="center"
+                rounded="full"
+                bg={iconBgColor}
+                color={iconColor}
+              >
                 <Icon as={MapPin} boxSize={6} />
               </Flex>
               <Box>
-                <Text fontWeight="bold" fontSize="md" color={headingColor} mb={1}>
+                <Text
+                  fontWeight="bold"
+                  fontSize="md"
+                  color={headingColor}
+                  mb={1}
+                >
                   Location
                 </Text>
                 <Text color={textColor} fontSize="lg">
@@ -158,7 +209,11 @@ export default function ContactSection() {
                 Connect on Social Media
               </Text>
               <HStack spacing={5}>
-                <Link href="https://github.com/hasnainaqa" isExternal aria-label="GitHub">
+                <Link
+                  href="https://github.com/hasnainaqa"
+                  isExternal
+                  aria-label="GitHub"
+                >
                   <Flex
                     w={12}
                     h={12}
@@ -170,16 +225,20 @@ export default function ContactSection() {
                     transition="all 0.3s"
                     _hover={{
                       bg: iconColor,
-                      color: useColorModeValue("white", "gray.800"),
-                      transform: "translateY(-2px)",
-                      shadow: "md",
+                      color: useColorModeValue('white', 'gray.800'),
+                      transform: 'translateY(-2px)',
+                      shadow: 'md',
                     }}
                   >
                     <Icon as={Github} boxSize={5} />
                   </Flex>
                 </Link>
 
-                <Link href="https://www.linkedin.com/in/hasnainaqa/" isExternal aria-label="LinkedIn">
+                <Link
+                  href="https://www.linkedin.com/in/hasnainaqa/"
+                  isExternal
+                  aria-label="LinkedIn"
+                >
                   <Flex
                     w={12}
                     h={12}
@@ -191,9 +250,9 @@ export default function ContactSection() {
                     transition="all 0.3s"
                     _hover={{
                       bg: iconColor,
-                      color: useColorModeValue("white", "gray.800"),
-                      transform: "translateY(-2px)",
-                      shadow: "md",
+                      color: useColorModeValue('white', 'gray.800'),
+                      transform: 'translateY(-2px)',
+                      shadow: 'md',
                     }}
                   >
                     <Icon as={Linkedin} boxSize={5} />
@@ -225,7 +284,6 @@ export default function ContactSection() {
         </CardBody>
       </MotionCard>
 
-      {/* Contact Form Card */}
       <MotionCard
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -239,8 +297,16 @@ export default function ContactSection() {
         shadow="md"
         overflow="hidden"
       >
-        <CardHeader bg={useColorModeValue("brand.50", "gray.700")} py={6} px={8}>
-          <Heading as="h3" size="lg" color={useColorModeValue("brand.700", "white")}>
+        <CardHeader
+          bg={useColorModeValue('brand.50', 'gray.700')}
+          py={6}
+          px={8}
+        >
+          <Heading
+            as="h3"
+            size="lg"
+            color={useColorModeValue('brand.700', 'white')}
+          >
             Send a Message
           </Heading>
         </CardHeader>
@@ -248,7 +314,11 @@ export default function ContactSection() {
         <CardBody p={8}>
           <VStack spacing={6}>
             <FormControl isRequired>
-              <FormLabel htmlFor="name" color={headingColor} fontWeight="medium">
+              <FormLabel
+                htmlFor="name"
+                color={headingColor}
+                fontWeight="medium"
+              >
                 Name
               </FormLabel>
               <InputGroup size="lg">
@@ -263,17 +333,21 @@ export default function ContactSection() {
                   onChange={(e) => setName(e.target.value)}
                   bg={inputBgColor}
                   borderColor={borderColor}
-                  _hover={{ borderColor: "brand.300" }}
+                  _hover={{ borderColor: 'brand.300' }}
                   _focus={{
-                    borderColor: "brand.500",
-                    boxShadow: `0 0 0 1px ${useColorModeValue("brand.500", "brand.300")}`,
+                    borderColor: 'brand.500',
+                    boxShadow: `0 0 0 1px ${useColorModeValue('brand.500', 'brand.300')}`,
                   }}
                 />
               </InputGroup>
             </FormControl>
 
             <FormControl>
-              <FormLabel htmlFor="email" color={headingColor} fontWeight="medium">
+              <FormLabel
+                htmlFor="email"
+                color={headingColor}
+                fontWeight="medium"
+              >
                 Email
               </FormLabel>
               <InputGroup size="lg">
@@ -288,17 +362,21 @@ export default function ContactSection() {
                   onChange={(e) => setEmail(e.target.value)}
                   bg={inputBgColor}
                   borderColor={borderColor}
-                  _hover={{ borderColor: "brand.300" }}
+                  _hover={{ borderColor: 'brand.300' }}
                   _focus={{
-                    borderColor: "brand.500",
-                    boxShadow: `0 0 0 1px ${useColorModeValue("brand.500", "brand.300")}`,
+                    borderColor: 'brand.500',
+                    boxShadow: `0 0 0 1px ${useColorModeValue('brand.500', 'brand.300')}`,
                   }}
                 />
               </InputGroup>
             </FormControl>
 
             <FormControl isRequired>
-              <FormLabel htmlFor="subject" color={headingColor} fontWeight="medium">
+              <FormLabel
+                htmlFor="subject"
+                color={headingColor}
+                fontWeight="medium"
+              >
                 Subject
               </FormLabel>
               <InputGroup size="lg">
@@ -313,17 +391,21 @@ export default function ContactSection() {
                   onChange={(e) => setSubject(e.target.value)}
                   bg={inputBgColor}
                   borderColor={borderColor}
-                  _hover={{ borderColor: "brand.300" }}
+                  _hover={{ borderColor: 'brand.300' }}
                   _focus={{
-                    borderColor: "brand.500",
-                    boxShadow: `0 0 0 1px ${useColorModeValue("brand.500", "brand.300")}`,
+                    borderColor: 'brand.500',
+                    boxShadow: `0 0 0 1px ${useColorModeValue('brand.500', 'brand.300')}`,
                   }}
                 />
               </InputGroup>
             </FormControl>
 
             <FormControl isRequired>
-              <FormLabel htmlFor="message" color={headingColor} fontWeight="medium">
+              <FormLabel
+                htmlFor="message"
+                color={headingColor}
+                fontWeight="medium"
+              >
                 Message
               </FormLabel>
               <Textarea
@@ -335,10 +417,10 @@ export default function ContactSection() {
                 bg={inputBgColor}
                 borderColor={borderColor}
                 size="lg"
-                _hover={{ borderColor: "brand.300" }}
+                _hover={{ borderColor: 'brand.300' }}
                 _focus={{
-                  borderColor: "brand.500",
-                  boxShadow: `0 0 0 1px ${useColorModeValue("brand.500", "brand.300")}`,
+                  borderColor: 'brand.500',
+                  boxShadow: `0 0 0 1px ${useColorModeValue('brand.500', 'brand.300')}`,
                 }}
               />
             </FormControl>
@@ -354,8 +436,8 @@ export default function ContactSection() {
               isLoading={isSubmitting}
               loadingText="Sending"
               _hover={{
-                transform: "translateY(-2px)",
-                boxShadow: "lg",
+                transform: 'translateY(-2px)',
+                boxShadow: 'lg',
               }}
             >
               Send Message
@@ -366,4 +448,3 @@ export default function ContactSection() {
     </SimpleGrid>
   )
 }
-

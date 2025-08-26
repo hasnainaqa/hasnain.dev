@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import PageLayout from "./page-layout"
-import ResumeHeader from "./resume-header"
-import EducationSection from "./education-section"
-import SkillsCluster from "./skills-cluster"
-import SectionHeading from "./section-heading"
+import PageLayout from './page-layout'
+import ResumeHeader from './resume-header'
+import EducationSection from './education-section'
+import SkillsCluster from './skills-cluster'
+import SectionHeading from './section-heading'
 
 export default function ResumePage() {
   return (
@@ -22,4 +22,3 @@ export default function ResumePage() {
     </PageLayout>
   )
 }
-

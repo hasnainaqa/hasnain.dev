@@ -1,4 +1,4 @@
-import ProjectsPage from "../../components/ProjectsPage";
+import ProjectsPage from '../../components/ProjectsPage'
 
 export default function Projects() {
   return (
@@ -6,5 +6,5 @@ export default function Projects() {
       <title>Portfolio</title>
       <ProjectsPage />
     </>
-  );
+  )
 }

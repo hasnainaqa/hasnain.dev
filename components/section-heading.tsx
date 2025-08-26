@@ -1,7 +1,14 @@
-"use client"
+'use client'
 
-import { Heading, Text, Flex, Divider, Badge, useColorModeValue } from "@chakra-ui/react"
-import { motion } from "framer-motion"
+import {
+  Heading,
+  Text,
+  Flex,
+  Divider,
+  Badge,
+  useColorModeValue,
+} from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 
 const MotionFlex = motion(Flex)
 
@@ -11,7 +18,7 @@ interface SectionHeadingProps {
   accent?: string
   withBadge?: boolean
   badgeText?: string
-  align?: "left" | "center" | "right"
+  align?: 'left' | 'center' | 'right'
   mb?: number | { base: number; md: number }
 }
 
@@ -20,16 +27,16 @@ export default function SectionHeading({
   subtitle,
   accent,
   withBadge = false,
-  badgeText = "",
-  align = "center",
+  badgeText = '',
+  align = 'center',
   mb = { base: 8, md: 12 },
 }: SectionHeadingProps) {
-  const headingColor = useColorModeValue("gray.800", "white")
-  const accentColor = useColorModeValue("brand.600", "brand.300")
-  const textColor = useColorModeValue("gray.600", "gray.300")
-  const dividerColor = useColorModeValue("gray.200", "gray.700")
-  const badgeBgColor = useColorModeValue("brand.50", "gray.700")
-  const badgeColor = useColorModeValue("brand.700", "brand.200")
+  const headingColor = useColorModeValue('gray.800', 'white')
+  const accentColor = useColorModeValue('brand.600', 'brand.300')
+  const textColor = useColorModeValue('gray.600', 'gray.300')
+  const dividerColor = useColorModeValue('gray.200', 'gray.700')
+  const badgeBgColor = useColorModeValue('brand.50', 'gray.700')
+  const badgeColor = useColorModeValue('brand.700', 'brand.200')
 
   return (
     <MotionFlex
@@ -50,7 +57,13 @@ export default function SectionHeading({
           bg={badgeBgColor}
           color={badgeColor}
           fontWeight="medium"
-          alignSelf={align === "center" ? "center" : align === "left" ? "flex-start" : "flex-end"}
+          alignSelf={
+            align === 'center'
+              ? 'center'
+              : align === 'left'
+                ? 'flex-start'
+                : 'flex-end'
+          }
         >
           {badgeText || title}
         </Badge>
@@ -58,7 +71,7 @@ export default function SectionHeading({
 
       <Heading
         as="h2"
-        fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
+        fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
         fontWeight="bold"
         textAlign={align}
         mb={4}
@@ -80,19 +93,25 @@ export default function SectionHeading({
 
       {subtitle && (
         <Text
-          fontSize={{ base: "md", lg: "lg" }}
+          fontSize={{ base: 'md', lg: 'lg' }}
           color={textColor}
           textAlign={align}
-          maxW={align === "center" ? "2xl" : "full"}
-          mx={align === "center" ? "auto" : "0"}
+          maxW={align === 'center' ? '2xl' : 'full'}
+          mx={align === 'center' ? 'auto' : '0'}
           lineHeight="tall"
         >
           {subtitle}
         </Text>
       )}
 
-      {align === "left" && <Divider mt={4} width="80px" borderColor={dividerColor} borderBottomWidth="3px" />}
+      {align === 'left' && (
+        <Divider
+          mt={4}
+          width="80px"
+          borderColor={dividerColor}
+          borderBottomWidth="3px"
+        />
+      )}
     </MotionFlex>
   )
 }
-

@@ -1,10 +1,20 @@
-"use client"
+'use client'
 
-import type React from "react"
+import type React from 'react'
 
-import { Box, Heading, Text, Flex, useColorModeValue, VStack, Circle, Divider, Icon } from "@chakra-ui/react"
-import { motion } from "framer-motion"
-import { GraduationCap, School, BookOpen } from "lucide-react"
+import {
+  Box,
+  Heading,
+  Text,
+  Flex,
+  useColorModeValue,
+  VStack,
+  Circle,
+  Divider,
+  Icon,
+} from '@chakra-ui/react'
+import { motion } from 'framer-motion'
+import { GraduationCap, School, BookOpen } from 'lucide-react'
 
 const MotionBox = motion(Box)
 
@@ -17,27 +27,38 @@ interface EducationItemProps {
   isLast?: boolean
 }
 
-function EducationItem({ institution, degree, location, period, icon, isLast = false }: EducationItemProps) {
-  const bgColor = useColorModeValue("white", "gray.800")
-  const borderColor = useColorModeValue("gray.100", "gray.700")
-  const titleColor = useColorModeValue("gray.800", "white")
-  const subtitleColor = useColorModeValue("brand.600", "brand.300")
-  const textColor = useColorModeValue("gray.600", "gray.300")
-  const timelineColor = useColorModeValue("gray.200", "gray.600")
-  const circleColor = useColorModeValue("brand.500", "brand.400")
-  const circleBgColor = useColorModeValue("white", "gray.800")
+function EducationItem({
+  institution,
+  degree,
+  location,
+  period,
+  icon,
+  isLast = false,
+}: EducationItemProps) {
+  const bgColor = useColorModeValue('white', 'gray.800')
+  const borderColor = useColorModeValue('gray.100', 'gray.700')
+  const titleColor = useColorModeValue('gray.800', 'white')
+  const subtitleColor = useColorModeValue('brand.600', 'brand.300')
+  const textColor = useColorModeValue('gray.600', 'gray.300')
+  const timelineColor = useColorModeValue('gray.200', 'gray.600')
+  const circleColor = useColorModeValue('brand.500', 'brand.400')
+  const circleBgColor = useColorModeValue('white', 'gray.800')
 
   return (
     <Flex>
-      {/* Timeline */}
       <Flex direction="column" alignItems="center" mr={6}>
-        <Circle size="40px" bg={circleBgColor} borderWidth="2px" borderColor={circleColor} color={circleColor}>
+        <Circle
+          size="40px"
+          bg={circleBgColor}
+          borderWidth="2px"
+          borderColor={circleColor}
+          color={circleColor}
+        >
           {icon}
         </Circle>
         {!isLast && <Box height="100%" width="2px" bg={timelineColor} my={2} />}
       </Flex>
 
-      {/* Content */}
       <MotionBox
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -55,9 +76,9 @@ function EducationItem({ institution, degree, location, period, icon, isLast = f
           shadow="sm"
           transition="all 0.2s"
           _hover={{
-            shadow: "md",
-            borderColor: "brand.200",
-            transform: "translateY(-2px)",
+            shadow: 'md',
+            borderColor: 'brand.200',
+            transform: 'translateY(-2px)',
           }}
         >
           <Text color={subtitleColor} fontSize="sm" fontWeight="medium" mb={1}>
@@ -77,9 +98,9 @@ function EducationItem({ institution, degree, location, period, icon, isLast = f
 }
 
 export default function EducationSection() {
-  const headingColor = useColorModeValue("gray.800", "white")
-  const accentColor = useColorModeValue("brand.600", "brand.300")
-  const dividerColor = useColorModeValue("gray.200", "gray.700")
+  const headingColor = useColorModeValue('gray.800', 'white')
+  const accentColor = useColorModeValue('brand.600', 'brand.300')
+  const dividerColor = useColorModeValue('gray.200', 'gray.700')
 
   return (
     <Box mb={16}>
@@ -121,4 +142,3 @@ export default function EducationSection() {
     </Box>
   )
 }
-

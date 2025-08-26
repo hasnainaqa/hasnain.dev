@@ -1,14 +1,13 @@
-import type React from "react"
-import { Providers } from "./providers"
-import "./globals.css"
+import type React from 'react'
+import { Providers } from './providers'
+import './globals.css'
 export const metadata = {
-  title: "Hasnain Portfolio",
-  description: "Professional portfolio website",
+  title: 'Hasnain Portfolio',
+  description: 'Professional portfolio website',
   icons: {
-    icon: "/favicon.svg", 
+    icon: '/favicon.svg',
   },
-};
-
+}
 
 export default function RootLayout({
   children,
@@ -23,4 +22,3 @@ export default function RootLayout({
     </html>
   )
 }
-

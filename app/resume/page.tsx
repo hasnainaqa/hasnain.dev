@@ -1,4 +1,4 @@
-import ResumePage from "../../components/ResumePage";
+import ResumePage from '../../components/ResumePage'
 
 export default function Resume() {
   return (
@@ -6,5 +6,5 @@ export default function Resume() {
       <title>Hasnain Resume</title>
       <ResumePage />
     </>
-  );
+  )
 }

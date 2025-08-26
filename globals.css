@@ -1,0 +1,12 @@
+@import "tailwindcss/preflight"; /* replaces @tailwind base */
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* optional: hide scrollbar globally */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
