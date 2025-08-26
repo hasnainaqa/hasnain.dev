@@ -1,4 +1,4 @@
-import {CVPreview} from "../../components/cvPreview"
+import { CVPreview } from "@/components/cvPreview";
 
 export default function CvPreview() {
   return (

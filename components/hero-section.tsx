@@ -11,6 +11,7 @@ import {
   Image,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const MotionBox = motion(Box)
 
@@ -89,9 +90,11 @@ export default function HeroSection() {
             spacing={4}
             align="center"
           >
+            <Link href = "/cv-preview"  target="_blank" >
             <Button size="md" fontWeight="medium" px={6} colorScheme="brand">
               View Portfolio
             </Button>
+          </Link>
             <a href="/resume.pdf" download>
               <Button
                 size="md"
