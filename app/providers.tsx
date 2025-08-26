@@ -6,7 +6,7 @@ import { ChakraProvider, extendTheme, ColorModeScript } from "@chakra-ui/react";
 
 
 const config = {
-  initialColorMode: "light",
+  initialColorMode: "dark",
   useSystemColorMode: true,
 }
 

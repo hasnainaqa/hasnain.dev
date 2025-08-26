@@ -107,7 +107,7 @@ export default function ContactSection() {
                   Email
                 </Text>
                 <Link
-                  href="mailto:hasnain@example.com"
+                  href="mailto:muhammedhasnain3356@gmail.com"
                   color={iconColor}
                   fontWeight="medium"
                   fontSize="lg"
