@@ -95,7 +95,7 @@ export default function HeroSection() {
               View Portfolio
             </Button>
           </Link>
-            <a href="/resume.pdf" download>
+            <a href="/cv-preview" download>
               <Button
                 size="md"
                 fontWeight="medium"

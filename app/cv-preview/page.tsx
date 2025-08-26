@@ -1,9 +1,12 @@
-import { CVPreview } from "@/components/cvPreview";
+import { CVPreview } from '@/components/cvPreview'
+import { Box } from '@chakra-ui/react'
 
 export default function CvPreview() {
   return (
-    <main className="min-h-screen bg-background">
+    <Box as="main" minH="100vh" bg="gray.50" _dark={{ bg: 'gray.900' }}>
+      <title>Hasnain Resume</title>
+
       <CVPreview />
-    </main>
+    </Box>
   )
 }

@@ -15,7 +15,7 @@ export function CVPreview() {
   const experience = [
     {
       title: 'DevClan Lahore',
-      role: 'Frontend Developer',
+      role: 'Full Stack Developer',
       period: 'July 2025 - Present',
       description:
         'Currently working as a Frontend Developer, focusing on creating responsive and interactive user interfaces using modern web technologies. Contributing to various client projects with emphasis on performance optimization and user experience.',
@@ -26,7 +26,7 @@ export function CVPreview() {
     {
       title: 'Fazier.com',
       role: 'MERN Stack Developer',
-      period: 'Dec 2024 - july 2025',
+      period: 'Dec 2023 - july 2025',
       description:
         'Worked as a MERN Stack web developer for a startup, contributing to the design and development of modern web pages using Next.js, Tailwind CSS, and other MERN technologies.',
       skills: ['Next.js', 'Tailwind CSS', 'MERN Stack', 'SEO'],
