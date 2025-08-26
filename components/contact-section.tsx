@@ -54,7 +54,7 @@ export default function ContactSection() {
     setIsSubmitting(true)
 
     // Create mailto link with form data
-    const mailtoLink = `mailto:hasnain@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`
+    const mailtoLink = `mailto:muhammedhasnain3356@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`
 
     // Simulate a slight delay for better UX
     setTimeout(() => {
@@ -113,7 +113,7 @@ export default function ContactSection() {
                   fontSize="lg"
                   _hover={{ textDecoration: "none", color: "brand.500" }}
                 >
-                  hasnain@example.com
+                  muhammedhasnain3356@gmail.com
                 </Link>
               </Box>
             </HStack>
@@ -127,12 +127,12 @@ export default function ContactSection() {
                   Phone
                 </Text>
                 <Link
-                  href="tel:+923001234567"
+                  href="tel:+923256244441"
                   color={textColor}
                   fontSize="lg"
                   _hover={{ textDecoration: "none", color: "brand.500" }}
                 >
-                  +92 300 123 4567
+                  +92 325 624 4441
                 </Link>
               </Box>
             </HStack>
@@ -158,7 +158,7 @@ export default function ContactSection() {
                 Connect on Social Media
               </Text>
               <HStack spacing={5}>
-                <Link href="https://github.com/" isExternal aria-label="GitHub">
+                <Link href="https://github.com/hasnainaqa" isExternal aria-label="GitHub">
                   <Flex
                     w={12}
                     h={12}
@@ -179,7 +179,7 @@ export default function ContactSection() {
                   </Flex>
                 </Link>
 
-                <Link href="https://linkedin.com/" isExternal aria-label="LinkedIn">
+                <Link href="https://www.linkedin.com/in/hasnainaqa/" isExternal aria-label="LinkedIn">
                   <Flex
                     w={12}
                     h={12}
@@ -199,7 +199,7 @@ export default function ContactSection() {
                     <Icon as={Linkedin} boxSize={5} />
                   </Flex>
                 </Link>
-                <Link href="https://twitter.com/" isExternal aria-label="Twitter">
+                {/* <Link href="https://twitter.com/" isExternal aria-label="Twitter">
                   <Flex
                     w={12}
                     h={12}
@@ -218,7 +218,7 @@ export default function ContactSection() {
                   >
                     <Icon as={Twitter} boxSize={5} />
                   </Flex>
-                </Link>
+                </Link> */}
               </HStack>
             </Box>
           </VStack>
@@ -272,7 +272,7 @@ export default function ContactSection() {
               </InputGroup>
             </FormControl>
 
-            <FormControl isRequired>
+            <FormControl>
               <FormLabel htmlFor="email" color={headingColor} fontWeight="medium">
                 Email
               </FormLabel>

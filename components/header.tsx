@@ -1,20 +1,46 @@
 "use client"
 
-import { Box, Flex, HStack, Button, useColorModeValue } from "@chakra-ui/react"
+import {
+  Box,
+  Flex,
+  HStack,
+  Button,
+  useColorModeValue,
+  IconButton,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  VStack,
+  useDisclosure,
+  Menu,
+} from "@chakra-ui/react"
+import { HamburgerIcon } from "@chakra-ui/icons"
 import AnimatedLogo from "./animated-logo"
 import ColorModeToggle from "./color-mode-toggle"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useMemo, useRef } from "react"
 
 export default function Header() {
   const pathname = usePathname()
-
-  const isActive = (path: string) => {
-    return pathname === path
-  }
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const btnRef = useRef(null)
 
   const bgColor = useColorModeValue("white", "gray.800")
   const borderColor = useColorModeValue("gray.100", "gray.700")
+
+  const navItems = useMemo(
+    () => [
+      { href: "/", label: "Home" },
+      { href: "/projects", label: "Projects" },
+      { href: "/resume", label: "Resume" },
+      { href: "/contact", label: "Contact" },
+    ],
+    []
+  )
 
   return (
     <Box
@@ -30,47 +56,94 @@ export default function Header() {
       py={3}
     >
       <Flex alignItems="center" justifyContent="space-between" maxW="7xl" mx="auto">
+        {/* Logo */}
         <Link href="/" passHref>
           <AnimatedLogo />
         </Link>
 
+        {/* Desktop Navigation */}
         <HStack spacing={6} display={{ base: "none", md: "flex" }}>
-          <Link href="/" passHref>
-            <Button variant={isActive("/") ? "solid" : "ghost"} colorScheme="brand" size="sm">
-              Home
-            </Button>
-          </Link>
-          <Link href="/projects" passHref>
-            <Button variant={isActive("/projects") ? "solid" : "ghost"} colorScheme="brand" size="sm">
-              Projects
-            </Button>
-          </Link>
-          <Link href="/resume" passHref>
-            <Button variant={isActive("/resume") ? "solid" : "ghost"} colorScheme="brand" size="sm">
-              Resume
-            </Button>
-          </Link>
-          <Link href="/contact" passHref>
-            <Button variant={isActive("/contact") ? "solid" : "ghost"} colorScheme="brand" size="sm">
-              Contact
-            </Button>
-          </Link>
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} passHref>
+              <Button
+                variant={pathname === item.href ? "solid" : "ghost"}
+                colorScheme="brand"
+                size="sm"
+              >
+                {item.label}
+              </Button>
+            </Link>
+          ))}
         </HStack>
 
+        {/* Right Side */}
         <HStack spacing={3}>
           <ColorModeToggle />
+
+          {/* Desktop CTA */}
           <Button
             display={{ base: "none", md: "inline-flex" }}
             colorScheme="brand"
             size="sm"
             fontWeight="medium"
             rounded="md"
+            as={Link}
+            href="/contact"
           >
             Contact Me
           </Button>
+
+          {/* Mobile Hamburger */}
+          <IconButton
+            ref={btnRef}
+            display={{ base: "inline-flex", md: "none" }}
+            icon={<HamburgerIcon />}
+            aria-label="Open Menu"
+            onClick={onOpen}
+          />
         </HStack>
       </Flex>
+
+      {/* Mobile Drawer */}
+      <Drawer
+        isOpen={isOpen}
+        placement="right"
+        onClose={onClose}
+        finalFocusRef={btnRef}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Navigation</DrawerHeader>
+
+          <DrawerBody>
+            <VStack spacing={4} align="stretch">
+              {navItems.map((item) => (
+                <Link key={item.href} href={item.href} passHref>
+                  <Button
+                    onClick={onClose}
+                    w="100%"
+                    justifyContent="flex-start"
+                    variant={pathname === item.href ? "solid" : "ghost"}
+                    colorScheme="brand"
+                  >
+                    {item.label}
+                  </Button>
+                </Link>
+              ))}
+              <Button
+                as={Link}
+                href="/contact"
+                onClick={onClose}
+                colorScheme="brand"
+                w="100%"
+              >
+                Contact Me
+              </Button>
+            </VStack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </Box>
   )
 }
-

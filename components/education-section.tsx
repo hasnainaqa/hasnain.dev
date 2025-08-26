@@ -94,26 +94,26 @@ export default function EducationSection() {
 
       <VStack spacing={0} align="stretch">
         <EducationItem
-          institution="COMSATS University Islamabad"
-          degree="Bachelors in Software Engineering (BSSE)"
-          location="Lahore, Punjab, Pakistan"
-          period="Sep 2016 - Jul 2020"
+          institution="University of Gujrat"
+          degree="Bachelors in Computer Science (BSCS)"
+          location="Gujrat, Punjab, Pakistan"
+          period="2021 - 2025"
           icon={<Icon as={GraduationCap} />}
         />
 
         <EducationItem
-          institution="Punjab College"
-          degree="Intermediate (FSc Pre Engineering)"
+          institution="Superior College"
+          degree="Intermediate (ICS Physics)"
           location="Gujranwala, Punjab, Pakistan"
-          period="Jun 2014 - Apr 2016"
+          period="2019 -  2021"
           icon={<Icon as={School} />}
         />
 
         <EducationItem
-          institution="Matta Virkan High School"
+          institution="The Educator (Al Kalem Campus)"
           degree="Matriculation (Science)"
           location="Gujranwala, Punjab, Pakistan"
-          period="Sep 2012 - May 2014"
+          period=" 2017 -  2019"
           icon={<Icon as={BookOpen} />}
           isLast
         />
